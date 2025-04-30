@@ -21,8 +21,29 @@ This project is a task scheduler application built using Next.js and Genkit. It 
 -   **Tailwind CSS:** For styling the user interface.
 -   **Other dependencies:** check `package.json` for the full list
 
-## How to Run
+## 🚀 Getting Started
+Follow these steps to set up and run the project locally.
 
-1.  **Clone the repository:**
+## 🧰 Prerequisites
+-  Node.js v18+
+-  npm (or yarn / pnpm)
+-  Google Cloud CLI (for Genkit authentication)
+
+## 📦 Installation
+
+# 1. Clone the repository
+git clone https://github.com/your-username/your-repo-name.git
+cd your-repo-name
+
+# 2. Install dependencies
+npm install
+
+# 3. Copy and configure environment variables
+cp .env.example .env
+
+# 4. Start the Next.js development server
+npm run dev
+# Access at http://localhost:3000
+
 
 
