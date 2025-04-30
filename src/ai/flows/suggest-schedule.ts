@@ -1,6 +1,7 @@
 // Use server directive is required for all Genkit flows.
 'use server';
 
+import { googleAI } from '@genkit-ai/googleai';
 /**
  * @fileOverview This file defines a Genkit flow for suggesting a daily schedule based on user tasks, deadlines, and importance.
  *
@@ -9,8 +10,8 @@
  * - SuggestScheduleOutput - The output type for the suggestSchedule function, outlining the suggested schedule format.
  */
 
-import {ai} from 'genkit'; // Import ai directly from genkit
 import {z} from 'zod'; // Assuming zod is used directly based on package.json
+import { ai } from '../ai-instance';
 
 // Define the input schema for the suggestSchedule function
 const SuggestScheduleInputSchema = z.object({
@@ -44,7 +45,7 @@ export async function suggestSchedule(input: SuggestScheduleInput): Promise<Sugg
   return suggestScheduleFlow(input);
 }
 
-const assessTaskDurationAndImportance = ai.defineTool({
+const assessTaskDurationAndImportance = ai?.defineTool({
   name: 'assessTaskDurationAndImportance',
   description: 'Assess the duration and importance of a task to help schedule it effectively.',
   inputSchema: z.object({
